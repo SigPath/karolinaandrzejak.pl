@@ -1,144 +1,684 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analiza Wzorców Manipulacyjnych w Relacjach</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Enhanced SEO Meta Tags -->
+  <title>Karolina Andrzejak - Profesjonalna Domena Premium | karolinaandrzejak.pl</title>
+  <meta name="description" content="Domena karolinaandrzejak.pl - ekskluzywna oferta sprzedaży. Idealna dla marki osobistej, portfolio, bloga eksperckiego. Sprawdź warunki i złóż ofertę już dziś!" />
+  <meta name="keywords" content="Karolina Andrzejak, domena na sprzedaż, marka osobista, portfolio, blog ekspercki, karolinaandrzejak.pl, strona www" />
+  <link rel="canonical" href="https://karolinaandrzejak.pl/" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+  <meta name="author" content="Właściciel domeny karolinaandrzejak.pl" />
+  
+  <!-- Enhanced Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Karolina Andrzejak - Domena Premium na Sprzedaż" />
+  <meta property="og:description" content="Ekskluzywna domena karolinaandrzejak.pl dostępna do zakupu. Idealna dla marki osobistej i działalności profesjonalnej." />
+  <meta property="og:url" content="https://karolinaandrzejak.pl/" />
+  <meta property="og:site_name" content="karolinaandrzejak.pl" />
+  <meta property="og:locale" content="pl_PL" />
+  
+  <!-- Enhanced Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Karolina Andrzejak - Domena Premium na Sprzedaż" />
+  <meta name="twitter:description" content="Sprawdź ofertę zakupu domeny karolinaandrzejak.pl - idealna dla marki osobistej" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
+  
+  <!-- Enhanced CSS with better performance and SEO -->
   <style>
-    /* Style pozostają takie same jak w poprzedniej wersji */
+    :root {
+      --primary: #0066cc;
+      --primary-dark: #0052a3;
+      --secondary: #ff6b35;
+      --success: #28a745;
+      --bg-dark: #0a0e1a;
+      --bg-card: #1a1f2e;
+      --text-primary: #ffffff;
+      --text-secondary: #b8c4d0;
+      --text-muted: #6b7280;
+      --border: rgba(255,255,255,0.1);
+      --shadow: 0 10px 30px rgba(0,0,0,0.3);
+      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; }
+    
     body {
-      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-      color: #e2e8f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: 
+        radial-gradient(circle at 20% 10%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+        var(--bg-dark);
+      min-height: 100vh;
       overflow-x: hidden;
     }
-    .glow-red { box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); animation: pulse-glow 2s infinite; }
-    .glow-yellow { box-shadow: 0 0 15px rgba(251, 191, 36, 0.3); }
-    @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); } 50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); } }
-    @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .alert-item { animation: slideIn 0.5s ease-out; }
-    .warning-banner { background: linear-gradient(90deg, #dc2626, #b91c1c, #dc2626); background-size: 200% 100%; animation: shimmer 3s ease-in-out infinite; }
-    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-    .scammer-quote { background: linear-gradient(45deg, #374151, #4b5563); border-left: 4px solid #ef4444; font-style: italic; position: relative; }
-    .scammer-quote::before { content: '"'; font-size: 3rem; position: absolute; top: -10px; left: 10px; color: #ef4444; opacity: 0.5; }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header with enhanced visual impact */
+    .header {
+      text-align: center;
+      padding: 60px 0 40px;
+      position: relative;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+      animation: slideIn 1s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { width: 0; }
+      to { width: 200px; }
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(0, 102, 204, 0.15);
+      border: 1px solid var(--primary);
+      border-radius: 25px;
+      color: #4da6ff;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .badge::before {
+      content: '⭐';
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+    
+    .subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--text-secondary);
+      max-width: 800px;
+      margin: 0 auto 40px;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Enhanced cards */
+    .card {
+      background: rgba(26, 31, 46, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gradient);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      border-color: rgba(255,255,255,0.2);
+    }
+    
+    .grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: 1fr;
+    }
+    
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+    
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+      position: relative;
+      padding-left: 20px;
+    }
+    
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 30px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin: 30px 0 15px;
+      color: var(--primary);
+    }
+    
+    .price-box {
+      background: var(--gradient);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      margin: 30px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .price-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    .price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .price-note {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 30px;
+      background: var(--secondary);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .cta-button:hover::before {
+      left: 100%;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+    }
+    
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .benefits-list li {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      padding-left: 40px;
+    }
+    
+    .benefits-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 15px;
+      width: 25px;
+      height: 25px;
+      background: var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .benefits-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .keyword-tag {
+      padding: 8px 16px;
+      background: rgba(102, 126, 234, 0.2);
+      border: 1px solid rgba(102, 126, 234, 0.4);
+      border-radius: 25px;
+      font-size: 0.85rem;
+      color: #a5b4fc;
+      transition: all 0.3s ease;
+    }
+    
+    .keyword-tag:hover {
+      background: rgba(102, 126, 234, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .faq-item {
+      margin-bottom: 25px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+    
+    .faq-question:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      color: var(--text-secondary);
+    }
+    
+    .faq-answer.active {
+      padding: 20px;
+      max-height: 200px;
+    }
+    
+    .contact-info {
+      text-align: center;
+      padding: 40px;
+      background: var(--gradient);
+      border-radius: 20px;
+      color: white;
+    }
+    
+    .contact-info a {
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    
+    .footer {
+      text-align: center;
+      padding: 60px 0 30px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+    
+    /* Animations */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .card {
+        padding: 25px;
+      }
+      
+      .price {
+        font-size: 2.5rem;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
+
+  <!-- Enhanced JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": "Domena karolinaandrzejak.pl",
+        "description": "Ekskluzywna domena internetowa idealna dla marki osobistej, portfolio, bloga eksperckiego lub działalności firmowej związanej z imieniem i nazwiskiem Karolina Andrzejak.",
+        "brand": {
+          "@type": "Brand",
+          "name": "karolinaandrzejak.pl"
+        },
+        "sku": "karolinaandrzejak-pl-premium",
+        "url": "https://karolinaandrzejak.pl/",
+        "category": "Domain Names",
+        "offers": {
+          "@type": "Offer",
+          "price": "8000",
+          "priceCurrency": "PLN",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2024-12-31",
+          "url": "https://karolinaandrzejak.pl/",
+          "seller": {
+            "@type": "Organization",
+            "name": "Właściciel domeny karolinaandrzejak.pl"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "1"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name": "karolinaandrzejak.pl",
+        "url": "https://karolinaandrzejak.pl/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://karolinaandrzejak.pl/?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Czy domena karolinaandrzejak.pl jest dostępna do zakupu?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, domena jest dostępna do natychmiastowego zakupu. Po finalizacji umowy rozpoczynamy bezpieczny transfer u rejestratora zgodnie z procedurami NASK."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do czego najlepiej pasuje domena karolinaandrzejak.pl?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Domena ideally nadaje się do tworzenia marki osobistej, portfolio zawodowego, bloga eksperckiego, strony firmowej lub serwisu związanego z działalnością profesjonalną osoby o imieniu i nazwisku Karolina Andrzejak."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak przebiega proces transferu domeny?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Proces transferu jest w pełni bezpieczny i przejrzysty. Po akceptacji oferty przygotowujemy umowę sprzedaży i inicjujemy transfer u rejestratora zgodnie z regulaminem NASK. Cały proces można zrealizować zdalnie."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="font-sans">
-  <header class="bg-gradient-to-r from-red-900 to-purple-900 text-white p-6 shadow-2xl">
-    <div class="max-w-6xl mx-auto">
-      <h1 class="text-4xl font-bold mb-2">🔬 Analiza Wzorców Manipulacyjnych w Relacjach</h1>
-      <p class="text-lg opacity-90">Projekt edukacyjny oparty na studium prawdziwych przypadków</p>
-      <div class="mt-4 warning-banner text-center py-2 px-4 rounded-lg">
-        <strong>⚠️ Celem strony jest prewencja i budowanie świadomości.</strong>
+
+<body>
+  <div class="container">
+    <!-- Enhanced Header -->
+    <header class="header">
+      <div class="badge">
+        Domena Premium
       </div>
-    </div>
-  </header>
-
-  <main class="max-w-6xl mx-auto p-6">
-    <!-- Wprowadzenie -->
-    <section class="mb-8 bg-gray-800 p-6 rounded-xl shadow-xl">
-        <h2 class="text-2xl font-bold mb-4 text-center">O Projekcie</h2>
-        <p class="text-center">Ta strona jest zanonimizowaną analizą powtarzalnych wzorców zachowań, które prowadzą do kryzysów w relacjach. Prezentowane dane, choć oparte na autentycznych wydarzeniach, zostały pozbawione wszelkich cech identyfikujących, aby chronić prywatność zaangażowanych osób. Naszym celem jest wyłącznie edukacja, która może pomóc innym rozpoznać sygnały ostrzegawcze we własnym życiu.</p>
-    </section>
-
-    <!-- Skala problemu -->
-    <section class="mb-8 bg-gradient-to-r from-red-800 to-orange-700 p-6 rounded-xl shadow-2xl glow-red">
-      <h2 class="text-2xl font-bold mb-4 text-center">📊 Kluczowe Parametry Analizowanego Przypadku</h2>
-      <div class="grid md:grid-cols-3 gap-4 text-center">
-        <div class="bg-black bg-opacity-30 p-4 rounded-lg">
-          <div class="text-3xl font-bold text-red-300">3+ lata</div>
-          <div class="text-sm">Okres trwania podwójnej relacji</div>
-        </div>
-        <div class="bg-black bg-opacity-30 p-4 rounded-lg">
-          <div class="text-3xl font-bold text-orange-300">2</div>
-          <div class="text-sm">Partnerzy wprowadzani w błąd równocześnie</div>
-        </div>
-        <div class="bg-black bg-opacity-30 p-4 rounded-lg">
-          <div class="text-3xl font-bold text-yellow-300">1</div>
-          <div class="text-sm">Dziecko w centrum konfliktu</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quotes rotacyjne -->
-    <section class="mb-8">
-      <div id="rotatingQuote" class="scammer-quote p-4 rounded-lg text-center transition-all duration-500">
-        <p class="text-lg font-medium" id="quoteText">"To była tylko przyjaźń." - typowa fraza minimalizująca, używana do ukrycia emocjonalnej zdrady.</p>
-      </div>
-    </section>
-
-    <!-- TOP 10 sygnałów ostrzegawczych -->
-    <section class="mt-8 bg-gray-800 p-6 rounded-xl shadow-xl">
-      <h2 class="text-2xl font-bold mb-6 text-center">🔍 TOP 10 Zaobserwowanych Taktyk i Wzorców</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="space-y-3">
-          <div class="bg-red-900 bg-opacity-30 p-3 rounded border-l-4 border-red-500">
-            <strong>1. Segmentacja Tożsamości</strong><br>
-            <span class="text-sm text-gray-300">Używanie wielu profili, pseudonimów, kreowanie alternatywnych wizerunków.</span>
-          </div>
-          <div class="bg-red-900 bg-opacity-30 p-3 rounded border-l-4 border-red-500">
-            <strong>2. Emocjonalny "Plan B"</strong><br>
-            <span class="text-sm text-gray-300">Utrzymywanie stałego, głębokiego kontaktu z "przyjacielem" jako siatki bezpieczeństwa.</span>
-          </div>
-          <div class="bg-red-900 bg-opacity-30 p-3 rounded border-l-4 border-red-500">
-            <strong>3. Patologiczne Unikanie Konfliktu</strong><br>
-            <span class="text-sm text-gray-300">Brak otwartych kłótni jako fasada dla rozwiązywania problemów na zewnątrz.</span>
-          </div>
-          <div class="bg-red-900 bg-opacity-30 p-3 rounded border-l-4 border-red-500">
-            <strong>4. Idealizacja i Dewaluacja</strong><br>
-            <span class="text-sm text-gray-300">Partner jest albo idealizowany, albo degradowany w zależności od potrzeb.</span>
-          </div>
-          <div class="bg-red-900 bg-opacity-30 p-3 rounded border-l-4 border-red-500">
-            <strong>5. Ukrywanie Kontaktów</strong><br>
-            <span class="text-sm text-gray-300">Zapisywanie kontaktów pod fałszywymi nazwami, ukrywanie konwersacji.</span>
-          </div>
-        </div>
-        <div class="space-y-3">
-          <div class="bg-orange-900 bg-opacity-30 p-3 rounded border-l-4 border-orange-500">
-            <strong>6. Projekcja i Odwracanie Winy</strong><br>
-            <span class="text-sm text-gray-300">Oskarżanie partnera o cechy/czyny, które samemu się przejawia.</span>
-          </div>
-          <div class="bg-orange-900 bg-opacity-30 p-3 rounded border-l-4 border-orange-500">
-            <strong>7. Dysonans Deklaracji i Czynów</strong><br>
-            <span class="text-sm text-gray-300">Publiczne deklarowanie przywiązania do wartości, które są prywatnie łamane.</span>
-          </div>
-          <div class="bg-orange-900 bg-opacity-30 p-3 rounded border-l-4 border-orange-500">
-            <strong>8. Minimalizacja i Racjonalizacja</strong><br>
-            <span class="text-sm text-gray-300">Usprawiedliwianie szkodliwych zachowań jako "nieszkodliwych" lub "koniecznych".</span>
-          </div>
-          <div class="bg-orange-900 bg-opacity-30 p-3 rounded border-l-4 border-orange-500">
-            <strong>9. Instrumentalizacja Dziecka</strong><br>
-            <span class="text-sm text-gray-300">Używanie dziecka jako argumentu, tarczy lub narzędzia w konflikcie z partnerem.</span>
-          </div>
-          <div class="bg-orange-900 bg-opacity-30 p-3 rounded border-l-4 border-orange-500">
-            <strong>10. Lęk przed Samotnością jako Motor Działań</strong><br>
-            <span class="text-sm text-gray-300">Podejmowanie destrukcyjnych decyzji w celu uniknięcia bycia samemu.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-  </main>
-
-  <footer class="mt-12 bg-gray-900 text-center py-8 px-4">
-      <p class="mt-6 text-xs text-gray-400">
-        Strona o charakterze analityczno-edukacyjnym. Prezentowane wzorce pochodzą z analizy autentycznych przypadków.<br>
-        Wszelkie dane zostały zanonimizowane. Celem jest wyłącznie prewencja i wsparcie dla osób w podobnych sytuacjach.
+      <h1>Karolina Andrzejak</h1>
+      <p class="subtitle">
+        Ekskluzywna domena <strong>karolinaandrzejak.pl</strong> dostępna do zakupu. 
+        Idealna dla marki osobistej, portfolio zawodowego i działalności profesjonalnej.
       </p>
-  </footer>
+    </header>
+
+    <!-- Main Content Grid -->
+    <div class="grid">
+      <!-- Main Offer Section -->
+      <main class="card animate-on-scroll" itemscope itemtype="https://schema.org/Product">
+        <h2>Oferta Sprzedaży Domeny</h2>
+        
+        <p style="font-size: 1.1rem; margin-bottom: 30px; color: var(--text-secondary);">
+          Domena <strong itemprop="name">karolinaandrzejak.pl</strong> to wyjątkowa okazja do stworzenia 
+          silnej marki osobistej w internecie. Krótki, łatwy do zapamiętania adres, który naturalnie 
+          pozycjonuje się na zapytania związane z frazą <strong>"Karolina Andrzejak"</strong>.
+        </p>
+
+        <div class="price-box" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <div class="price">
+            <span itemprop="price">8 000</span> <span itemprop="priceCurrency">PLN</span>
+          </div>
+          <p class="price-note">Cena wywoławcza - zapraszamy do negocjacji</p>
+          <meta itemprop="availability" content="https://schema.org/InStock">
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="mailto:cpa@interia.pl?subject=Oferta%20zakupu%20domeny%20karolinaandrzejak.pl&body=Dzień%20dobry,%0A%0AInteresuje%20mnie%20zakup%20domeny%20karolinaandrzejak.pl.%20Proszę%20o%20kontakt%20w%20sprawie%20warunków%20i%20szczegółów%20transakcji.%0A%0APozdrawiam" 
+             class="cta-button">
+            📧 Wyślij Ofertę Zakupu
+          </a>
+        </div>
+
+        <h3>Dlaczego Warto Zainwestować?</h3>
+        <ul class="benefits-list">
+          <li><strong>Natychmiastowa Rozpoznawalność SEO</strong> - Bezpośrednie dopasowanie do zapytań "Karolina Andrzejak"</li>
+          <li><strong>Budowa Autorytetu</strong> - Profesjonalna marka osobista w internecie</li>
+          <li><strong>Kontrola Wizerunku</strong> - Zarządzanie tym, co ludzie znajdą o Tobie w Google</li>
+          <li><strong>Łatwość Komunikacji</strong> - Prosty adres do zapamiętania i udostępniania</li>
+          <li><strong>Inwestycja w Przyszłość</strong> - Rosnąca wartość unikalnych domen osobistych</li>
+        </ul>
+
+        <h3>Przykładowe Zastosowania</h3>
+        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; margin: 20px 0;">
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 10px 0;">🏠 <strong>Strona Główna</strong> - Centralne miejsce Twojej obecności online</li>
+            <li style="padding: 10px 0;">💼 <strong>Portfolio Zawodowe</strong> - Prezentacja doświadczenia, projektów, referencji</li>
+            <li style="padding: 10px 0;">📝 <strong>Blog Ekspercki</strong> - Dzielenie się wiedzą i budowanie autorytetu</li>
+            <li style="padding: 10px 0;">🚀 <strong>Działalność Biznesowa</strong> - Strona firmowa lub oferta usług</li>
+            <li style="padding: 10px 0;">📧 <strong>Kontakt Profesjonalny</strong> - Adres email @karolinaandrzejak.pl</li>
+          </ul>
+        </div>
+
+        <div class="keywords">
+          <span class="keyword-tag">Karolina Andrzejak</span>
+          <span class="keyword-tag">domena premium</span>
+          <span class="keyword-tag">marka osobista</span>
+          <span class="keyword-tag">portfolio online</span>
+          <span class="keyword-tag">blog ekspercki</span>
+          <span class="keyword-tag">strona zawodowa</span>
+        </div>
+      </main>
+
+      <!-- Sidebar with FAQ and Contact -->
+      <aside>
+        <div class="card animate-on-scroll">
+          <h2>FAQ</h2>
+          
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              ✓ Czy domena jest dostępna natychmiast?
+            </div>
+            <div class="faq-answer">
+              Tak! Po podpisaniu umowy rozpoczynamy transfer u rejestratora zgodnie z procedurami NASK. Process trwa zazwyczaj 5-7 dni roboczych.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              📞 Jak złożyć ofertę lub zapytać o szczegóły?
+            </div>
+            <div class="faq-answer">
+              Najszybciej przez email: <a href="mailto:cpa@interia.pl">cpa@interia.pl</a>. 
+              Odpowiadamy w ciągu 24 godzin z propozycją warunków i harmonogramem.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              🏢 Czy wystawiacie fakturę VAT?
+            </div>
+            <div class="faq-answer">
+              Tak, współpracujemy zarówno z osobami prywatnymi jak i firmami. Możemy wystawić fakturę VAT dla transakcji B2B.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              🔒 Czy transfer jest bezpieczny?
+            </div>
+            <div class="faq-answer">
+              Absolutnie! Cały proces odbywa się zgodnie z regulaminem NASK, z umową sprzedaży i możliwością weryfikacji na każdym etapie.
+            </div>
+          </div>
+        </div>
+
+        <div class="card animate-on-scroll">
+          <div class="contact-info">
+            <h3 style="margin-bottom: 15px; color: white;">💌 Kontakt</h3>
+            <p style="margin-bottom: 20px;">Masz pytania? Chcesz negocjować cenę?</p>
+            <a href="mailto:cpa@interia.pl" style="text-decoration: none;">
+              cpa@interia.pl
+            </a>
+            <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.9;">
+              Odpowiadamy w ciągu 24h
+            </p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- SEO Information Section -->
+    <section class="card animate-on-scroll" style="margin-top: 40px;">
+      <h2>🎯 Potencjał SEO - "Karolina Andrzejak"</h2>
+      <div style="display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 30px;">
+        <div style="background: rgba(0, 102, 204, 0.1); padding: 25px; border-radius: 15px; border: 1px solid rgba(0, 102, 204, 0.3);">
+          <h4 style="color: var(--primary); margin-bottom: 15px;">📈 Przewaga Konkurencyjna</h4>
+          <p>Exact Match Domain (EMD) dla frazy "Karolina Andrzejak" daje ogromną przewagę w wynikach wyszukiwania Google.</p>
+        </div>
+        <div style="background: rgba(40, 167, 69, 0.1); padding: 25px; border-radius: 15px; border: 1px solid rgba(40, 167, 69, 0.3);">
+          <h4 style="color: var(--success); margin-bottom: 15px;">🚀 Szybkie Wyniki</h4>
+          <p>Domena o wysokiej tematycznej zgodności z treścią pozwala szybciej osiągnąć wysokie pozycje w SERP.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legal Information -->
+    <section class="card animate-on-scroll">
+      <h2>⚖️ Informacje Prawne</h2>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;">
+        Niniejsza strona ma charakter wyłącznie komercyjny i dotyczy sprzedaży nazwy domenowej 
+        <strong>karolinaandrzejak.pl</strong>. Serwis nie jest powiązany z żadną konkretną osobą 
+        prywatną o imieniu i nazwisku Karolina Andrzejak. Nie publikujemy treści osobistych ani 
+        nie naruszamy dóbr osobistych. Wszystkie znaki towarowe i nazwy mogą być własnością 
+        odpowiednich podmiotów. Oferta skierowana jest do osób zainteresowanych wykorzystaniem 
+        domeny do celów komercyjnych lub osobistych.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> Właściciel domeny karolinaandrzejak.pl</p>
+    </footer>
+  </div>
 
   <script>
-    // Rotating quotes
-    const quotes = [
-      "\"To była tylko przyjaźń.\" - typowa fraza minimalizująca.",
-      "Osoby unikające konfliktu często rozwiązują problemy na zewnątrz związku.",
-      "Lęk przed samotnością może być motorem destrukcyjnych decyzji.",
-      "Sprzeczność między deklarowanymi wartościami a czynami to poważny sygnał ostrzegawczy.",
-      "Używanie wielu tożsamości online może świadczyć o głębszych problemach.",
-      "W zdrowej relacji nie ma potrzeby ukrywania kontaktów pod fałszywymi imionami."
-    ];
-  </script>
-</body>
-</html>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ Toggle Function
+    function toggleFAQ(element) {
+      const answer = element.nextElementSibling;
+      const isActive = answer.classList.contains('active');
+      
+      // Close all FAQ answers
+      document.querySelectorAll('.faq-answer').
