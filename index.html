@@ -6,8 +6,8 @@
   
   <!-- SEO Meta Tags -->
   <title>Karolina Andrzejak - Profesjonalna Domena Premium | karolinaandrzejak.pl</title>
-  <meta name="description" content="Domena karolinaandrzejak.pl - ekskluzywna oferta sprzedaży. Idealna dla marki osobistej, portfolio, bloga eksperckiego. Sprawdź warunki i złóż ofertę już dziś!" />
-  <meta name="keywords" content="Karolina Andrzejak, domena na sprzedaż, marka osobista, portfolio, blog ekspercki, karolinaandrzejak.pl, strona www" />
+  <meta name="description" content="Domena karolinaandrzejak.pl - ekskluzywna oferta sprzedaży. Idealna dla marki osobistej, portfolio, bloga eksperckiego. Zaproponuj cenę i złóż ofertę już dziś!" />
+  <meta name="keywords" content="Karolina Andrzejak, domena na sprzedaż, marka osobista, portfolio, blog ekspercki, karolinaandrzejak.pl, zaproponuj cenę" />
   <link rel="canonical" href="https://karolinaandrzejak.pl/" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
   <meta name="author" content="Właściciel domeny karolinaandrzejak.pl" />
@@ -15,7 +15,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Karolina Andrzejak - Domena Premium na Sprzedaż" />
-  <meta property="og:description" content="Ekskluzywna domena karolinaandrzejak.pl dostępna do zakupu. Idealna dla marki osobistej i działalności profesjonalnej." />
+  <meta property="og:description" content="Ekskluzywna domena karolinaandrzejak.pl dostępna do zakupu. Zaproponuj cenę. Idealna dla marki osobistej i działalności profesjonalnej." />
   <meta property="og:url" content="https://karolinaandrzejak.pl/" />
   <meta property="og:site_name" content="karolinaandrzejak.pl" />
   <meta property="og:locale" content="pl_PL" />
@@ -23,7 +23,7 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Karolina Andrzejak - Domena Premium na Sprzedaż" />
-  <meta name="twitter:description" content="Sprawdź ofertę zakupu domeny karolinaandrzejak.pl - idealna dla marki osobistej" />
+  <meta name="twitter:description" content="Sprawdź ofertę zakupu domeny karolinaandrzejak.pl - zaproponuj cenę" />
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
@@ -104,16 +104,15 @@
     h3 { font-size: 1.5rem; margin: 30px 0 15px; color: var(--primary); }
     .price-box {
       background: var(--gradient); border-radius: 15px; padding: 30px;
-      text-align: center; margin: 30px 0; position: relative; overflow: hidden;
+      text-align: center; margin: 30px 0;
     }
-    .price { font-size: 3rem; font-weight: 800; color: white; margin-bottom: 10px; }
-    .price-note { color: rgba(255,255,255,0.9); font-size: 0.9rem; }
     .cta-button {
       display: inline-flex; align-items: center; justify-content: center; gap: 12px;
       padding: 18px 30px; background: var(--secondary); color: white;
       text-decoration: none; border-radius: 50px; font-weight: 700;
       font-size: 1.1rem; transition: all 0.3s ease;
       box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+      border: none; cursor: pointer;
     }
     .cta-button:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6); }
     .benefits-list { list-style: none; padding: 0; }
@@ -154,8 +153,6 @@
         "sku": "karolinaandrzejak-pl-premium",
         "offers": {
           "@type": "Offer",
-          "price": "Twoja Propozycja Cenowa",
-          "priceCurrency": "PLN",
           "availability": "https://schema.org/InStock",
           "url": "https://karolinaandrzejak.pl/"
         }
@@ -170,7 +167,7 @@
         "mainEntity": [
           {
             "@type": "Question", "name": "Czy domena karolinaandrzejak.pl jest dostępna?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Tak, domena jest dostępna do natychmiastowego zakupu." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Tak, domena jest dostępna do zakupu. Zapraszamy do składania ofert." }
           },
           {
             "@type": "Question", "name": "Do czego pasuje ta domena?",
@@ -197,15 +194,18 @@
         <p class="text-xl mb-6 text-gray-300">Domena <strong>karolinaandrzejak.pl</strong> to unikalna okazja do stworzenia silnej marki w internecie. Krótki, łatwy do zapamiętania adres, który naturalnie pozycjonuje się na zapytania związane z frazą <strong>"Karolina Andrzejak"</strong>.</p>
 
         <div class="price-box">
-          <div class="price">8 000 PLN</div>
-          <p class="price-note">Cena wywoławcza - zapraszamy do negocjacji</p>
+          <label for="price-offer" class="block text-xl mb-4 text-white font-bold">Zaproponuj Cenę</label>
+          <div class="flex justify-center items-center gap-2">
+              <input type="number" id="price-offer" name="price-offer" placeholder="Wpisz kwotę" class="bg-gray-900 bg-opacity-50 border border-gray-600 text-white text-2xl rounded-lg p-3 text-center w-48 focus:outline-none focus:ring-2 focus:ring-purple-400">
+              <span class="text-2xl font-bold text-white">PLN</span>
+          </div>
         </div>
 
         <div class="text-center my-8">
-          <a href="mailto:cpa@interia.pl?subject=Oferta%20zakupu%20domeny%20karolinaandrzejak.pl" class="cta-button">
+          <button onclick="sendOffer()" class="cta-button">
             <span class="text-2xl">📧</span>
             <span>Wyślij Ofertę Zakupu</span>
-          </a>
+          </button>
         </div>
 
         <h3>Dlaczego Warto Zainwestować?</h3>
@@ -216,25 +216,6 @@
           <li><strong>Łatwość Komunikacji</strong> - Prosty adres do zapamiętania i udostępniania</li>
           <li><strong>Inwestycja w Przyszłość</strong> - Rosnąca wartość unikalnych domen osobistych</li>
         </ul>
-
-        <h3 class="mt-8">Przykładowe Zastosowania</h3>
-        <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg mt-4">
-          <ul class="list-none space-y-3">
-            <li>🏠 <strong>Strona Główna</strong> - Centralne miejsce Twojej obecności online</li>
-            <li>💼 <strong>Portfolio Zawodowe</strong> - Prezentacja doświadczenia i projektów</li>
-            <li>📝 <strong>Blog Ekspercki</strong> - Dzielenie się wiedzą i budowanie autorytetu</li>
-            <li>🚀 <strong>Działalność Biznesowa</strong> - Strona firmowa lub oferta usług</li>
-            <li>📧 <strong>Kontakt Profesjonalny</strong> - Adres email @karolinaandrzejak.pl</li>
-          </ul>
-        </div>
-        
-        <div class="keywords mt-6">
-          <span class="keyword-tag">Karolina Andrzejak</span>
-          <span class="keyword-tag">domena premium</span>
-          <span class="keyword-tag">marka osobista</span>
-          <span class="keyword-tag">portfolio online</span>
-          <span class="keyword-tag">blog ekspercki</span>
-        </div>
       </main>
 
       <aside>
@@ -242,11 +223,11 @@
           <h2>FAQ</h2>
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">✓ Czy domena jest dostępna natychmiast?</div>
-            <div class="faq-answer"><p>Tak! Po podpisaniu umowy rozpoczynamy transfer zgodnie z procedurami NASK. Proces trwa zazwyczaj 5-7 dni roboczych.</p></div>
+            <div class="faq-answer"><p>Tak! Po akceptacji oferty i podpisaniu umowy rozpoczynamy transfer zgodnie z procedurami NASK. Proces trwa zazwyczaj 5-7 dni roboczych.</p></div>
           </div>
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">📞 Jak złożyć ofertę?</div>
-            <div class="faq-answer"><p>Najszybciej przez email: <a href="mailto:cpa@interia.pl" class="text-blue-400">cpa@interia.pl</a>. Odpowiadamy w ciągu 24 godzin.</p></div>
+            <div class="faq-answer"><p>Wpisz swoją propozycję cenową w formularzu i kliknij 'Wyślij Ofertę Zakupu' lub skontaktuj się bezpośrednio przez email: <a href="mailto:cpa@interia.pl" class="text-blue-400">cpa@interia.pl</a>.</p></div>
           </div>
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">🏢 Czy wystawiacie fakturę VAT?</div>
@@ -292,6 +273,31 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.animate-on-scroll').forEach(el => {
   observer.observe(el);
 });
+
+function sendOffer() {
+  const priceInput = document.getElementById('price-offer');
+  const price = priceInput.value;
+
+  if (!price || price <= 0) {
+    alert('Proszę wpisać poprawną kwotę oferty.');
+    priceInput.focus();
+    return;
+  }
+
+  const email = 'cpa@interia.pl';
+  const subject = 'Oferta zakupu domeny karolinaandrzejak.pl';
+  const body = `Dzień dobry,
+
+Składam ofertę zakupu domeny karolinaandrzejak.pl w kwocie: ${price} PLN.
+
+Proszę o kontakt w sprawie warunków i szczegółów transakcji.
+
+Pozdrawiam`;
+
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailtoLink;
+}
 </script>
 
 </body>
