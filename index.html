@@ -3,151 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case Study: Analiza Manipulacji Relacyjnej</title>
+  <title>Analiza Wzorców Manipulacyjnych w Relacjach</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
+    /* Style pozostają takie same jak w poprzedniej wersji */
     body {
       background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
       color: #e2e8f0;
       overflow-x: hidden;
     }
-    
-    .glow-red {
-      box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
-      animation: pulse-glow 2s infinite;
-    }
-    
-    .glow-yellow {
-      box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
-    }
-    
-    @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); }
-      50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
-    }
-    
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .alert-item {
-      animation: slideIn 0.5s ease-out;
-    }
-    
-    .warning-banner {
-      background: linear-gradient(90deg, #dc2626, #b91c1c, #dc2626);
-      background-size: 200% 100%;
-      animation: shimmer 3s ease-in-out infinite;
-    }
-    
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
-    
-    .scammer-quote {
-      background: linear-gradient(45deg, #374151, #4b5563);
-      border-left: 4px solid #ef4444;
-      font-style: italic;
-      position: relative;
-    }
-    
-    .scammer-quote::before {
-      content: '"';
-      font-size: 3rem;
-      position: absolute;
-      top: -10px;
-      left: 10px;
-      color: #ef4444;
-      opacity: 0.5;
-    }
+    .glow-red { box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); animation: pulse-glow 2s infinite; }
+    .glow-yellow { box-shadow: 0 0 15px rgba(251, 191, 36, 0.3); }
+    @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); } 50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); } }
+    @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .alert-item { animation: slideIn 0.5s ease-out; }
+    .warning-banner { background: linear-gradient(90deg, #dc2626, #b91c1c, #dc2626); background-size: 200% 100%; animation: shimmer 3s ease-in-out infinite; }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    .scammer-quote { background: linear-gradient(45deg, #374151, #4b5563); border-left: 4px solid #ef4444; font-style: italic; position: relative; }
+    .scammer-quote::before { content: '"'; font-size: 3rem; position: absolute; top: -10px; left: 10px; color: #ef4444; opacity: 0.5; }
   </style>
 </head>
 <body class="font-sans">
   <header class="bg-gradient-to-r from-red-900 to-purple-900 text-white p-6 shadow-2xl">
     <div class="max-w-6xl mx-auto">
-      <h1 class="text-4xl font-bold mb-2">🔬 Case Study: Analiza Manipulacji Relacyjnej</h1>
-      <p class="text-lg opacity-90">Anatomia trzyletniego podwójnego życia i jego konsekwencje</p>
+      <h1 class="text-4xl font-bold mb-2">🔬 Analiza Wzorców Manipulacyjnych w Relacjach</h1>
+      <p class="text-lg opacity-90">Projekt edukacyjny oparty na studium prawdziwych przypadków</p>
       <div class="mt-4 warning-banner text-center py-2 px-4 rounded-lg">
-        <strong>⚠️ FAKT: Wzorzec powtarzalny. Udokumentowano co najmniej 2 przypadki.</strong>
+        <strong>⚠️ Celem strony jest prewencja i budowanie świadomości.</strong>
       </div>
     </div>
   </header>
 
   <main class="max-w-6xl mx-auto p-6">
+    <!-- Wprowadzenie -->
+    <section class="mb-8 bg-gray-800 p-6 rounded-xl shadow-xl">
+        <h2 class="text-2xl font-bold mb-4 text-center">O Projekcie</h2>
+        <p class="text-center">Ta strona jest zanonimizowaną analizą powtarzalnych wzorców zachowań, które prowadzą do kryzysów w relacjach. Prezentowane dane, choć oparte na autentycznych wydarzeniach, zostały pozbawione wszelkich cech identyfikujących, aby chronić prywatność zaangażowanych osób. Naszym celem jest wyłącznie edukacja, która może pomóc innym rozpoznać sygnały ostrzegawcze we własnym życiu.</p>
+    </section>
+
     <!-- Skala problemu -->
     <section class="mb-8 bg-gradient-to-r from-red-800 to-orange-700 p-6 rounded-xl shadow-2xl glow-red">
-      <h2 class="text-2xl font-bold mb-4 text-center">📊 Kluczowe Dane Analizy</h2>
+      <h2 class="text-2xl font-bold mb-4 text-center">📊 Kluczowe Parametry Analizowanego Przypadku</h2>
       <div class="grid md:grid-cols-3 gap-4 text-center">
         <div class="bg-black bg-opacity-30 p-4 rounded-lg">
-          <div class="text-3xl font-bold text-red-300">3 lata+</div>
-          <div class="text-sm">Okres podwójnej relacji</div>
+          <div class="text-3xl font-bold text-red-300">3+ lata</div>
+          <div class="text-sm">Okres trwania podwójnej relacji</div>
         </div>
         <div class="bg-black bg-opacity-30 p-4 rounded-lg">
           <div class="text-3xl font-bold text-orange-300">2</div>
-          <div class="text-sm">Oszukani partnerzy równocześnie</div>
+          <div class="text-sm">Partnerzy wprowadzani w błąd równocześnie</div>
         </div>
         <div class="bg-black bg-opacity-30 p-4 rounded-lg">
           <div class="text-3xl font-bold text-yellow-300">1</div>
           <div class="text-sm">Dziecko w centrum konfliktu</div>
         </div>
       </div>
-      <p class="text-center mt-4 text-yellow-200">
-        <strong>Celem tej analizy jest prewencja przez edukację na temat wzorców zachowań.</strong>
-      </p>
     </section>
 
     <!-- Quotes rotacyjne -->
     <section class="mb-8">
       <div id="rotatingQuote" class="scammer-quote p-4 rounded-lg text-center transition-all duration-500">
-        <p class="text-lg font-medium" id="quoteText">"Nie potrzebujemy z Adasiem kogoś takiego." - mechanizm obronny, czerwiec 2025.</p>
+        <p class="text-lg font-medium" id="quoteText">"To była tylko przyjaźń." - typowa fraza minimalizująca, używana do ukrycia emocjonalnej zdrady.</p>
       </div>
     </section>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <!-- Live alerty -->
-      <section class="bg-gray-800 p-6 rounded-xl shadow-xl glow-yellow">
-        <h2 class="text-xl font-semibold mb-4 flex items-center">
-          🚨 Oś Czasu Kluczowych Wydarzeń
-        </h2>
-        <ul id="alerts" class="space-y-2">
-          <!-- Oś czasu zostanie dodana przez JS -->
-        </ul>
-      </section>
-
-      <!-- Wykres platform -->
-      <section class="bg-gray-800 p-6 rounded-xl shadow-xl">
-        <h2 class="text-xl font-semibold mb-4">🎭 Platformy Kreowania Wizerunku</h2>
-        <canvas id="platformChart" height="200"></canvas>
-      </section>
-    </div>
-
     <!-- TOP 10 sygnałów ostrzegawczych -->
     <section class="mt-8 bg-gray-800 p-6 rounded-xl shadow-xl">
-      <h2 class="text-2xl font-bold mb-6 text-center">🔍 TOP 10 Taktyk Manipulacyjnych (Case Study)</h2>
+      <h2 class="text-2xl font-bold mb-6 text-center">🔍 TOP 10 Zaobserwowanych Taktyk i Wzorców</h2>
       <div class="grid md:grid-cols-2 gap-4">
         <div class="space-y-3">
           <div class="bg-red-900 bg-opacity-30 p-3 rounded border-l-4 border-red-500">
             <strong>1. Segmentacja Tożsamości</strong><br>
-            <span class="text-sm text-gray-300">Używanie wielu profili ("olca", "mimmi"), peruk, starych zdjęć.</span>
+            <span class="text-sm text-gray-300">Używanie wielu profili, pseudonimów, kreowanie alternatywnych wizerunków.</span>
           </div>
           <div class="bg-red-900 bg-opacity-30 p-3 rounded border-l-4 border-red-500">
             <strong>2. Emocjonalny "Plan B"</strong><br>
-            <span class="text-sm text-gray-300">Utrzymywanie stałego, głębokiego kontaktu z "przyjacielem".</span>
+            <span class="text-sm text-gray-300">Utrzymywanie stałego, głębokiego kontaktu z "przyjacielem" jako siatki bezpieczeństwa.</span>
           </div>
           <div class="bg-red-900 bg-opacity-30 p-3 rounded border-l-4 border-red-500">
             <strong>3. Patologiczne Unikanie Konfliktu</strong><br>
-            <span class="text-sm text-gray-300">"Zero kłótni" jako fasada dla rozwiązywania problemów na zewnątrz.</span>
+            <span class="text-sm text-gray-300">Brak otwartych kłótni jako fasada dla rozwiązywania problemów na zewnątrz.</span>
           </div>
           <div class="bg-red-900 bg-opacity-30 p-3 rounded border-l-4 border-red-500">
             <strong>4. Idealizacja i Dewaluacja</strong><br>
-            <span class="text-sm text-gray-300">Partner jest albo idealizowany, albo degradowany ("łajdak").</span>
+            <span class="text-sm text-gray-300">Partner jest albo idealizowany, albo degradowany w zależności od potrzeb.</span>
           </div>
           <div class="bg-red-900 bg-opacity-30 p-3 rounded border-l-4 border-red-500">
             <strong>5. Ukrywanie Kontaktów</strong><br>
-            <span class="text-sm text-gray-300">Zapisywanie kochanka pod żeńskim imieniem ("Hania").</span>
+            <span class="text-sm text-gray-300">Zapisywanie kontaktów pod fałszywymi nazwami, ukrywanie konwersacji.</span>
           </div>
         </div>
         <div class="space-y-3">
@@ -157,254 +101,44 @@
           </div>
           <div class="bg-orange-900 bg-opacity-30 p-3 rounded border-l-4 border-orange-500">
             <strong>7. Dysonans Deklaracji i Czynów</strong><br>
-            <span class="text-sm text-gray-300">Publiczne deklarowanie "wartości rodzinnych" przy jednoczesnej zdradzie.</span>
+            <span class="text-sm text-gray-300">Publiczne deklarowanie przywiązania do wartości, które są prywatnie łamane.</span>
           </div>
           <div class="bg-orange-900 bg-opacity-30 p-3 rounded border-l-4 border-orange-500">
             <strong>8. Minimalizacja i Racjonalizacja</strong><br>
-            <span class="text-sm text-gray-300">"To tylko przyjaźń", "potrzebowałam rozmowy".</span>
+            <span class="text-sm text-gray-300">Usprawiedliwianie szkodliwych zachowań jako "nieszkodliwych" lub "koniecznych".</span>
           </div>
           <div class="bg-orange-900 bg-opacity-30 p-3 rounded border-l-4 border-orange-500">
-            <strong>9. Wykorzystywanie Dziecka</strong><br>
-            <span class="text-sm text-gray-300">Używanie dziecka jako tarczy i narzędzia w konflikcie.</span>
+            <strong>9. Instrumentalizacja Dziecka</strong><br>
+            <span class="text-sm text-gray-300">Używanie dziecka jako argumentu, tarczy lub narzędzia w konflikcie z partnerem.</span>
           </div>
           <div class="bg-orange-900 bg-opacity-30 p-3 rounded border-l-4 border-orange-500">
-            <strong>10. Fasada Pobożności / Moralności</strong><br>
-            <span class="text-sm text-gray-300">Kreowanie wizerunku osoby o wysokich standardach moralnych.</span>
+            <strong>10. Lęk przed Samotnością jako Motor Działań</strong><br>
+            <span class="text-sm text-gray-300">Podejmowanie destrukcyjnych decyzji w celu uniknięcia bycia samemu.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Symulator weryfikacji -->
-    <section class="mt-8 bg-gray-800 p-6 rounded-xl shadow-xl">
-      <h2 class="text-2xl font-bold mb-4">🕵️ Symulator Analizy Konwersacji (SMS)</h2>
-      <button id="verifyProfile" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-        🔍 Przeanalizuj fragment rozmowy
-      </button>
-      <div id="verificationLog" class="mt-4 font-mono text-sm"></div>
-    </section>
 
-    <!-- Procedura archiwizacji -->
-    <section class="mt-8 bg-gray-800 p-6 rounded-xl shadow-xl">
-      <h2 class="text-2xl font-bold mb-4">📁 Procedura Archiwizacji Dowodów (Rekomendowana)</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <div class="bg-blue-900 bg-opacity-30 p-4 rounded border-l-4 border-blue-500">
-          <h3 class="font-bold mb-2">1. Zrzuty Ekranu</h3>
-          <ul class="text-sm space-y-1">
-            <li>• Wszystkie profile + zdjęcia</li>
-            <li>• Kompletna historia czatów</li>
-            <li>• Dowody publicznych wypowiedzi</li>
-          </ul>
-        </div>
-        <div class="bg-green-900 bg-opacity-30 p-4 rounded border-l-4 border-green-500">
-          <h3 class="font-bold mb-2">2. Eksport Danych</h3>
-          <ul class="text-sm space-y-1">
-            <li>• Export SMS/czatów (XML/HTML)</li>
-            <li>• Nagrania rozmów (jeśli legalne)</li>
-            <li>• Kompletne kopie offline</li>
-          </ul>
-        </div>
-        <div class="bg-purple-900 bg-opacity-30 p-4 rounded border-l-4 border-purple-500">
-          <h3 class="font-bold mb-2">3. Metadane</h3>
-          <ul class="text-sm space-y-1">
-            <li>• Daty i godziny kontaktu</li>
-            <li>• Lokalizacje (jeśli dostępne)</li>
-            <li>• Kontekst sytuacyjny</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    
-    <!-- TL;DR -->
-    <section class="mt-8 bg-gradient-to-r from-yellow-800 to-orange-800 p-6 rounded-xl shadow-xl">
-      <h2 class="text-2xl font-bold mb-4">⚡ TL;DR - 7 Kluczowych Wniosków z Analizy</h2>
-      <div class="grid md:grid-cols-2 gap-3">
-        <div class="flex items-center space-x-2">
-          <span class="text-2xl">🎭</span>
-          <span>Wzorzec jest powtarzalny i długofalowy</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <span class="text-2xl">🛡️</span>
-          <span>Główny motor: lęk przed samotnością i demaskacją</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <span class="text-2xl">⚖️</span>
-          <span>Deklarowane wartości są sprzeczne z działaniami</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <span class="text-2xl">💬</span>
-          <span>Unikanie konfrontacji, eskalacja pod presją</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <span class="text-2xl">💾</span>
-          <span>Archiwizacja dowodów jest kluczowa dla obrony</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <span class="text-2xl">👶</span>
-          <span>Dziecko bywa używane jako narzędzie w konflikcie</span>
-        </div>
-        <div class="flex items-center space-x-2 md:col-span-2 justify-center">
-          <span class="text-2xl">🛡️</span>
-          <span><strong>Twoja konsekwencja > jej manipulacje</strong></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="mt-8 bg-gradient-to-r from-green-800 to-blue-800 p-6 rounded-xl shadow-xl text-center">
-      <h2 class="text-2xl font-bold mb-4">🤝 Jak Reagować na Podobne Wzorce?</h2>
-      <div class="grid md:grid-cols-3 gap-4 mb-6">
-        <div class="bg-white bg-opacity-10 p-4 rounded-lg">
-          <div class="text-3xl mb-2">⛔</div>
-          <h3 class="font-bold mb-2">1. STOP</h3>
-          <p class="text-sm">Zatrzymaj eskalację, nie angażuj się emocjonalnie</p>
-        </div>
-        <div class="bg-white bg-opacity-10 p-4 rounded-lg">
-          <div class="text-3xl mb-2">✅</div>
-          <h3 class="font-bold mb-2">2. DOKUMENTUJ</h3>
-          <p class="text-sm">Archiwizuj wszystko. Fakty są Twoją tarczą.</p>
-        </div>
-        <div class="bg-white bg-opacity-10 p-4 rounded-lg">
-          <div class="text-3xl mb-2">📞</div>
-          <h3 class="font-bold mb-2">3. DZIAŁAJ PRAWNIE</h3>
-          <p class="text-sm">Skorzystaj z pomocy prawnej, zwłaszcza w sprawach o dziecko</p>
-        </div>
-      </div>
-      
-      <div class="space-y-4">
-        <p class="text-lg"><strong>Jeśli doświadczasz podobnej sytuacji i potrzebujesz wsparcia:</strong></p>
-        <a href="mailto:wsparcie@analiza-relacji.pl?subject=Wsparcie w kryzysie" 
-           class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
-          📧 Skontaktuj się z grupą wsparcia
-        </a>
-        <div class="text-sm mt-4 space-y-2">
-          <p>⚠️ <strong>NIE</strong> daj się wciągnąć w publiczne kłótnie</p>
-          <p>⚠️ <strong>NIE</strong> niszcz dowodów w przypływie emocji</p>
-          <p>✅ <strong>ZAWSZE</strong> stawiaj dobro dziecka i swoje bezpieczeństwo na pierwszym miejscu</p>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="mt-12 bg-gray-900 text-center py-8 px-4">
-    <div class="max-w-4xl mx-auto">
       <p class="mt-6 text-xs text-gray-400">
-        Strona o charakterze analityczno-edukacyjnym. Przedstawione dane pochodzą z autentycznego przypadku.<br>
-        Celem jest prewencja i wsparcie dla osób w podobnych sytuacjach.
+        Strona o charakterze analityczno-edukacyjnym. Prezentowane wzorce pochodzą z analizy autentycznych przypadków.<br>
+        Wszelkie dane zostały zanonimizowane. Celem jest wyłącznie prewencja i wsparcie dla osób w podobnych sytuacjach.
       </p>
-    </div>
   </footer>
 
   <script>
     // Rotating quotes
     const quotes = [
-      "\"Nie potrzebujemy z Adasiem kogoś takiego.\" - czerwiec 2025.",
-      "\"Ty łajdaku.\" - reakcja na konfrontację z dowodami.",
-      "\"Przed nią stał samochód wcześniej, wcisnęła się.\" - racjonalizacja.",
-      "\"Nie masz swojego życia nie ? Zamiast ruch...c to odpisujesz...\" - eskalacja.",
-      "Deklaracja na profilu: \"Empatia i uczuciowość czyni z nas ludzi wartościowych\".",
-      "\"Marcin AnonUser Tinderowa piękność dzisiaj błyszczy\" - auto-sabotaż.",
-      "Wzorzec z domu rodzinnego: rozstanie i powrót po roku.",
-      "\"To była tylko przyjaźń, potrzebowałam rozmowy.\" - minimalizacja.",
-      "Lęk przed prawdą o sobie jest silniejszy niż lęk przed samotnością."
+      "\"To była tylko przyjaźń.\" - typowa fraza minimalizująca.",
+      "Osoby unikające konfliktu często rozwiązują problemy na zewnątrz związku.",
+      "Lęk przed samotnością może być motorem destrukcyjnych decyzji.",
+      "Sprzeczność między deklarowanymi wartościami a czynami to poważny sygnał ostrzegawczy.",
+      "Używanie wielu tożsamości online może świadczyć o głębszych problemach.",
+      "W zdrowej relacji nie ma potrzeby ukrywania kontaktów pod fałszywymi imionami."
     ];
-
-    let quoteIndex = 0;
-    setInterval(() => {
-      const quoteEl = document.getElementById('quoteText');
-      quoteEl.style.opacity = '0';
-      setTimeout(() => {
-        quoteEl.textContent = quotes[quoteIndex];
-        quoteEl.style.opacity = '1';
-        quoteIndex = (quoteIndex + 1) % quotes.length;
-      }, 500);
-    }, 5000);
-
-    // Timeline
-    const alertList = document.getElementById("alerts");
-    alertList.innerHTML = "";
-    const timelineEvents = [
-      { text: "IV 2021: Początek relacji z Marcinem", type: "medium" },
-      { text: "V 2021: Start równoległej relacji z Pawłem", type: "high" },
-      { text: "XI 2021: Wspólne zamieszkanie z Marcinem (relacja z Pawłem trwa)", type: "critical" },
-      { text: "XII 2023: Ciąża z Marcinem", type: "medium" },
-      { text: "VIII 2024: Rozstanie i demaskacja", type: "critical" },
-      { text: "IX 2024: Odrzucenie przez Pawła po poznaniu prawdy", type: "high" },
-      { text: "XII 2024: Nieudana próba manipulacji przez rodziców Marcina", type: "high" },
-      { text: "VI 2025: Agresywny SMS zrywający kontakt", type: "critical" },
-      { text: "IX 2025: Publiczna dekompensacja na grupie osiedlowej", type: "critical" }
-    ].reverse();
-
-    timelineEvents.forEach(event => {
-      const li = document.createElement("li");
-      li.className = "alert-item p-3 rounded border-l-4";
-      switch(event.type) {
-        case "critical": li.className += " bg-red-900 bg-opacity-50 border-red-500"; break;
-        case "high": li.className += " bg-orange-900 bg-opacity-50 border-orange-500"; break;
-        case "medium": li.className += " bg-yellow-900 bg-opacity-50 border-yellow-500"; break;
-      }
-      li.textContent = event.text;
-      alertList.appendChild(li);
-    });
-
-    // Chart for platforms
-    const ctx = document.getElementById("platformChart").getContext("2d");
-    const platformChart = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Sympatia', 'Tinder', 'Facebook (grupy)', 'Badoo', 'Biura Matrymonialne'],
-        datasets: [{
-          label: 'Platformy',
-          data: [40, 25, 20, 10, 5],
-          backgroundColor: ['#ef4444', '#f97316', '#3b82f6', '#8b5cf6', '#10b981'],
-          borderColor: '#1f2937',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        plugins: {
-          legend: { labels: { color: '#e2e8f0', font: { size: 12 } } }
-        },
-        maintainAspectRatio: false
-      }
-    });
-
-    // Conversation simulator
-    const verifyBtn = document.getElementById("verifyProfile");
-    const verificationLog = document.getElementById("verificationLog");
-
-    verifyBtn.addEventListener("click", () => {
-      const steps = [
-        "[Analiza]: 'Jesteś jedyną osobą, która mnie rozumie.'",
-        "[Interpretacja]: Tworzenie ekskluzywnej więzi emocjonalnej, wykluczanie partnera.",
-        "[Analiza]: 'Marcin ma obsesję na punkcie zdrady.'",
-        "[Interpretacja]: Projekcja. Przypisywanie partnerowi własnych, nieakceptowanych cech lub reakcji na własne działania.",
-        "[Analiza]: 'Nie powiedziałam ci, bo nie chciałam cię ranić.'",
-        "[Interpretacja]: Racjonalizacja. Usprawiedliwianie kłamstwa rzekomą troską o uczucia drugiej osoby.",
-        "[Analiza]: 'To była tylko przyjaźń.'",
-        "[Interpretacja]: Minimalizacja. Umniejszanie wagi i znaczenia relacji w celu uniknięcia odpowiedzialności.",
-        "[Wskaźnik Ryzyka]: 98% - WZORZEC EMOCJONALNEJ ZDRADY",
-        "[REKOMENDACJA]: Archiwizuj dowody, nie angażuj się w dyskusję o winie, postaw twarde granice."
-      ];
-
-      verificationLog.innerHTML = "";
-      verifyBtn.disabled = true;
-      verifyBtn.textContent = "⏳ Analiza w toku...";
-
-      steps.forEach((line, index) => {
-        setTimeout(() => {
-          const p = document.createElement("p");
-          p.className = line.includes('REKOMENDACJA') ? "text-green-400 font-bold" : line.includes('WZORZEC') ? "text-red-400 font-bold" : "text-blue-300";
-          p.textContent = line;
-          verificationLog.appendChild(p);
-          
-          if (index === steps.length - 1) {
-            verifyBtn.disabled = false;
-            verifyBtn.textContent = "🔍 Przeanalizuj kolejny fragment";
-          }
-        }, index * 1200);
-      });
-    });
   </script>
 </body>
-</html>```
+</html>
