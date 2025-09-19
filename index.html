@@ -1,1 +1,97 @@
-test
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Secure-ish Content Gate</title>
+<style>
+  :root { --w: 820px; --pad: 1.25rem; }
+  body { font-family: system-ui, Arial, sans-serif; background:#0b0c10; color:#e8e8e8; margin:0; }
+  .wrap { max-width:var(--w); margin:0 auto; padding:3rem var(--pad); }
+  .card { background:#121317; border:1px solid #22252d; border-radius:14px; padding:1.25rem; }
+  label{display:block;margin:.5rem 0 .25rem}
+  input{width:100%;padding:.7rem;border-radius:10px;border:1px solid #2a2f3a;background:#0f1015;color:#e8e8e8}
+  button{margin-top:1rem;padding:.7rem 1rem;border:0;border-radius:12px;background:#1f6feb;color:white;cursor:pointer}
+  .error{color:#ff9b9b;margin:.75rem 0}
+  .hidden{display:none}
+  a{color:#9ad1ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="login" class="card">
+    <h2>Podaj hasło</h2>
+    <div class="error" id="err" style="display:none"></div>
+    <label for="pw">Hasło</label>
+    <input id="pw" type="password" autocomplete="current-password" required />
+    <button id="btn">Odszyfruj</button>
+    <p style="opacity:.7;font-size:.9rem;margin-top:1rem">
+      Treść jest zaszyfrowana client-side (AES-GCM). Nie ma jej w źródle strony.
+    </p>
+  </div>
+
+  <div id="content" class="card hidden"></div>
+  <p id="logoutWrap" class="hidden"><a href="#" id="logout">Wyloguj</a></p>
+</div>
+
+<script>
+/** Wklej tu JSON z encryptor.html */
+const ENCRYPTED_BLOB = {
+  "v":1,"algo":"AES-GCM","iterations":150000,
+  "salt":"AAAAAAAAAAAAAAAAAAAAAA==",
+  "iv":"AAAAAAAAAAAA",
+  "ct":""
+}; // <- PODMIEŃ na swój blob!
+
+// --- utils
+const dec = new TextDecoder();
+const enc = new TextEncoder();
+const b64ToBytes = b64 => Uint8Array.from(atob(b64), c=>c.charCodeAt(0));
+async function deriveKey(pwd, salt, iterations){
+  const keyMaterial = await crypto.subtle.importKey("raw", enc.encode(pwd), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    { name:"PBKDF2", salt, iterations, hash:"SHA-256" },
+    keyMaterial, { name:"AES-GCM", length:256 }, false, ["decrypt"]
+  );
+}
+async function decryptBlob(pwd, blob){
+  const salt = b64ToBytes(blob.salt);
+  const iv   = b64ToBytes(blob.iv);
+  const ct   = b64ToBytes(blob.ct);
+  const key  = await deriveKey(pwd, salt, blob.iterations);
+  const buf  = await crypto.subtle.decrypt({name:"AES-GCM", iv}, key, ct);
+  return dec.decode(buf);
+}
+
+// prosta sesja (nie zapisujemy hasła, tylko znacznik)
+if (sessionStorage.getItem('auth') === '1') {
+  document.getElementById('login').classList.add('hidden');
+  document.getElementById('content').classList.remove('hidden');
+  document.getElementById('logoutWrap').classList.remove('hidden');
+}
+
+document.getElementById('btn').addEventListener('click', async ()=>{
+  const pw = document.getElementById('pw').value;
+  const err = document.getElementById('err');
+  err.style.display = 'none';
+  try {
+    const html = await decryptBlob(pw, ENCRYPTED_BLOB);
+    document.getElementById('content').innerHTML = html;
+    document.getElementById('login').classList.add('hidden');
+    document.getElementById('content').classList.remove('hidden');
+    document.getElementById('logoutWrap').classList.remove('hidden');
+    sessionStorage.setItem('auth','1');
+  } catch(e){
+    err.textContent = 'Błędne hasło lub blob.';
+    err.style.display = 'block';
+  }
+});
+
+document.getElementById('logout').addEventListener('click', (e)=>{
+  e.preventDefault();
+  sessionStorage.removeItem('auth');
+  location.reload();
+});
+</script>
+</body>
+</html>
