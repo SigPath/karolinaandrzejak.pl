@@ -3,144 +3,87 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- SEO Meta Tags -->
-  <title>Karolina Andrzejak - Profesjonalna Domena Premium | karolinaandrzejak.pl</title>
-  <meta name="description" content="Domena karolinaandrzejak.pl - ekskluzywna oferta sprzedaży. Idealna dla marki osobistej, portfolio, bloga eksperckiego. Zaproponuj cenę i złóż ofertę już dziś!" />
-  <meta name="keywords" content="Karolina Andrzejak, domena na sprzedaż, marka osobista, portfolio, blog ekspercki, karolinaandrzejak.pl, zaproponuj cenę" />
+
+  <!-- Primary SEO -->
+  <title>Domena karolinaandrzejak.pl na sprzedaż — oferta</title>
+  <meta name="description" content="Domena karolinaandrzejak.pl — idealna dla marki osobistej, portfolio lub firmy. Złóż ofertę zakupu w kilka sekund (e‑mail)." />
   <link rel="canonical" href="https://karolinaandrzejak.pl/" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
-  <meta name="author" content="Właściciel domeny karolinaandrzejak.pl" />
-  
-  <!-- Open Graph -->
+
+  <!-- Open Graph / Twitter (social share) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Karolina Andrzejak - Domena Premium na Sprzedaż" />
-  <meta property="og:description" content="Ekskluzywna domena karolinaandrzejak.pl dostępna do zakupu. Zaproponuj cenę. Idealna dla marki osobistej i działalności profesjonalnej." />
+  <meta property="og:title" content="Domena karolinaandrzejak.pl na sprzedaż" />
+  <meta property="og:description" content="Ekskluzywna domena gotowa do przejęcia. Idealna pod markę osobistą lub stronę firmową." />
   <meta property="og:url" content="https://karolinaandrzejak.pl/" />
   <meta property="og:site_name" content="karolinaandrzejak.pl" />
   <meta property="og:locale" content="pl_PL" />
-  
-  <!-- Twitter Cards -->
+  <!-- Optional: podmień na prawdziwy URL grafiki kiedy ją dodasz do repo -->
+  <meta property="og:image" content="https://karolinaandrzejak.pl/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Karolina Andrzejak - Domena Premium na Sprzedaż" />
-  <meta name="twitter:description" content="Sprawdź ofertę zakupu domeny karolinaandrzejak.pl - zaproponuj cenę" />
-  
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
-  
+
+  <!-- Favicon (emoji SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+
+  <!-- Performance: preconnect CDN -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <style>
     :root {
-      --primary: #0066cc;
-      --secondary: #ff6b35;
-      --success: #28a745;
-      --bg-dark: #0a0e1a;
-      --bg-card: #1a1f2e;
-      --text-primary: #ffffff;
-      --text-secondary: #b8c4d0;
-      --text-muted: #6b7280;
-      --border: rgba(255,255,255,0.1);
-      --shadow: 0 10px 30px rgba(0,0,0,0.3);
-      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --primary: #2563eb; /* blue-600 */
+      --accent: #f97316;  /* orange-500 */
+      --success: #22c55e; /* green-500 */
+      --bg: #0b1020;
+      --card: rgba(26,31,46,0.85);
+      --text: #ffffff;
+      --muted: #9aa4b2;
+      --border: rgba(255,255,255,.12);
+      --gradient: linear-gradient(135deg,#6366f1 0%, #8b5cf6 50%, #ec4899 100%);
     }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: var(--text-primary);
-      background: 
-        radial-gradient(circle at 20% 10%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-        var(--bg-dark);
-      min-height: 100vh;
-      overflow-x: hidden;
+    html{scroll-behavior:smooth}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(60rem 60rem at 10% 5%, rgba(99,102,241,.18), transparent 70%),
+        radial-gradient(50rem 50rem at 90% 90%, rgba(236,72,153,.12), transparent 70%),
+        var(--bg);
+      min-height:100vh; overflow-x:hidden;
     }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .header { text-align: center; padding: 60px 0 40px; position: relative; }
-    .header::before {
-      content: ''; position: absolute; top: 0; left: 50%;
-      transform: translateX(-50%); width: 200px; height: 4px;
-      background: var(--gradient); border-radius: 2px;
-      animation: slideIn 1s ease-out;
-    }
-    @keyframes slideIn { from { width: 0; } to { width: 200px; } }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 8px 16px; background: rgba(0, 102, 204, 0.15);
-      border: 1px solid var(--primary); border-radius: 25px;
-      color: #4da6ff; font-size: 14px; font-weight: 600;
-      margin-bottom: 20px; animation: fadeInUp 0.8s ease-out;
-    }
-    .badge::before { content: '⭐'; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 20px;
-      background: var(--gradient); -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; background-clip: text;
-      animation: fadeInUp 1s ease-out 0.2s both;
-    }
-    .subtitle {
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--text-secondary);
-      max-width: 800px; margin: 0 auto 40px;
-      animation: fadeInUp 1s ease-out 0.4s both;
-    }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .card {
-      background: rgba(26, 31, 46, 0.8); border: 1px solid var(--border);
-      border-radius: 20px; padding: 40px; margin-bottom: 30px;
-      box-shadow: var(--shadow); backdrop-filter: blur(10px);
-      transition: all 0.3s ease; position: relative; overflow: hidden;
-    }
-    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--gradient); }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.2); }
-    .grid { display: grid; gap: 30px; }
-    @media (min-width: 768px) { .grid { grid-template-columns: 2fr 1fr; } }
-    h2 { font-size: 2rem; margin-bottom: 20px; color: var(--text-primary); position: relative; padding-left: 20px; }
-    h2::before {
-      content: ''; position: absolute; left: 0; top: 50%;
-      transform: translateY(-50%); width: 4px; height: 30px;
-      background: var(--gradient); border-radius: 2px;
-    }
-    h3 { font-size: 1.5rem; margin: 30px 0 15px; color: var(--primary); }
-    .price-box {
-      background: var(--gradient); border-radius: 15px; padding: 30px;
-      text-align: center; margin: 30px 0;
-    }
-    .cta-button {
-      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
-      padding: 18px 30px; background: var(--secondary); color: white;
-      text-decoration: none; border-radius: 50px; font-weight: 700;
-      font-size: 1.1rem; transition: all 0.3s ease;
-      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
-      border: none; cursor: pointer;
-    }
-    .cta-button:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6); }
-    .benefits-list { list-style: none; padding: 0; }
-    .benefits-list li { padding: 15px 0 15px 40px; border-bottom: 1px solid var(--border); position: relative; }
-    .benefits-list li::before {
-      content: '✓'; position: absolute; left: 0; top: 15px; width: 25px; height: 25px;
-      background: var(--success); border-radius: 50%; display: flex;
-      align-items: center; justify-content: center; color: white; font-weight: bold;
-    }
-    .benefits-list li:last-child { border-bottom: none; }
-    .keywords { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-    .keyword-tag {
-      padding: 8px 16px; background: rgba(102, 126, 234, 0.2);
-      border: 1px solid rgba(102, 126, 234, 0.4); border-radius: 25px;
-      font-size: 0.85rem; color: #a5b4fc;
-    }
-    .faq-item { margin-bottom: 25px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .faq-question { padding: 20px; background: rgba(255,255,255,0.05); cursor: pointer; font-weight: 600; }
-    .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-secondary); }
-    .faq-answer.active { padding: 20px; max-height: 200px; }
-    .contact-info { text-align: center; padding: 40px; background: var(--gradient); border-radius: 20px; }
-    .contact-info a { color: white; font-weight: 600; font-size: 1.2rem; }
-    .footer { text-align: center; padding: 60px 0 30px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 60px; }
-    .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
-    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .header{padding:72px 0 40px;text-align:center;position:relative}
+    .header::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:220px;height:4px;background:var(--gradient);border-radius:2px}
+    .badge{display:inline-flex;gap:.5rem;align-items:center;padding:.5rem 1rem;border:1px solid var(--border);border-radius:9999px;background:rgba(37,99,235,.15);color:#93c5fd;font-weight:700}
+    .badge::before{content:'⭐';animation:pulse 2s infinite}
+    @keyframes pulse{50%{transform:scale(1.15)}}
+    h1{font-size:clamp(2.25rem,5vw,3.75rem);font-weight:800;margin:18px 0;background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .subtitle{max-width:800px;margin:0 auto;color:#cbd5e1}
+    .card{background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:20px;padding:32px;box-shadow:0 20px 40px rgba(0,0,0,.35)}
+    .card + .card{margin-top:24px}
+    .grid{display:grid;gap:28px}
+    @media (min-width: 900px){.grid{grid-template-columns:2fr 1fr}}
+    h2{font-size:1.75rem;margin:0 0 14px;position:relative;padding-left:18px}
+    h2::before{content:'';position:absolute;left:0;top:.3rem;width:4px;height:1.4rem;background:var(--gradient);border-radius:2px}
+    h3{font-weight:700;color:#bfdbfe}
+    .price-box{background:var(--gradient);border-radius:16px;padding:22px;text-align:center;margin:22px 0}
+    .cta{display:inline-flex;align-items:center;gap:.6rem;padding:14px 22px;border-radius:9999px;background:var(--accent);color:#fff;font-weight:800;box-shadow:0 10px 30px rgba(249,115,22,.45);border:0;cursor:pointer}
+    .cta:focus{outline:3px solid rgba(249,115,22,.5);outline-offset:2px}
+    .list{list-style:none;padding:0;margin:0}
+    .list li{padding:12px 0 12px 42px;border-bottom:1px solid var(--border);position:relative}
+    .list li:last-child{border-bottom:0}
+    .list li::before{content:'✓';position:absolute;left:0;top:10px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--success);color:#041016;font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .faq-q{font-weight:700;padding:16px 18px;background:rgba(255,255,255,.06);cursor:pointer}
+    .faq-a{padding:0 18px;max-height:0;overflow:hidden;transition:max-height .28s ease, padding .28s ease;color:var(--muted)}
+    .faq-a.active{padding:16px 18px;max-height:220px}
+    .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:.95rem}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .footer{color:var(--muted);text-align:center;padding:56px 0}
+    .fade{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    .fade.visible{opacity:1;transform:none}
   </style>
 
-  <!-- JSON-LD (Schema) -->
+  <!-- Structured data (JSON‑LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -148,13 +91,14 @@
       {
         "@type": "Product",
         "name": "Domena karolinaandrzejak.pl",
-        "description": "Ekskluzywna domena internetowa idealna dla marki osobistej, portfolio, bloga eksperckiego lub działalności firmowej związanej z imieniem i nazwiskiem Karolina Andrzejak.",
-        "brand": { "@type": "Brand", "name": "karolinaandrzejak.pl" },
+        "description": "Ekskluzywna domena internetowa do budowy marki osobistej, portfolio lub strony firmowej.",
+        "brand": {"@type": "Brand", "name": "karolinaandrzejak.pl"},
         "sku": "karolinaandrzejak-pl-premium",
         "offers": {
           "@type": "Offer",
+          "url": "https://karolinaandrzejak.pl/",
           "availability": "https://schema.org/InStock",
-          "url": "https://karolinaandrzejak.pl/"
+          "priceCurrency": "PLN"
         }
       },
       {
@@ -166,12 +110,19 @@
         "@type": "FAQPage",
         "mainEntity": [
           {
-            "@type": "Question", "name": "Czy domena karolinaandrzejak.pl jest dostępna?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Tak, domena jest dostępna do zakupu. Zapraszamy do składania ofert." }
+            "@type": "Question",
+            "name": "Czy domena karolinaandrzejak.pl jest dostępna?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Tak. Domena jest dostępna do zakupu — zapraszamy do złożenia oferty."}
           },
           {
-            "@type": "Question", "name": "Do czego pasuje ta domena?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Idealnie nadaje się do tworzenia marki osobistej, portfolio zawodowego lub strony firmowej." }
+            "@type": "Question",
+            "name": "Jak przebiega transfer domeny?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Po akceptacji oferty przygotowujemy umowę i rozpoczynamy transfer zgodnie z procedurami NASK. Zwykle trwa to 5–7 dni roboczych."}
+          },
+          {
+            "@type": "Question",
+            "name": "Czy wystawiacie fakturę VAT?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Tak — przy transakcjach B2B możemy wystawić fakturę VAT."}
           }
         ]
       }
@@ -179,120 +130,141 @@
   }
   </script>
 </head>
-
 <body>
+  <a class="sr-only" href="#main">Przejdź do treści głównej</a>
   <div class="container">
-    <header class="header">
-      <div class="badge">Domena Premium</div>
-      <h1>Karolina Andrzejak</h1>
-      <p class="subtitle">Ekskluzywna domena <strong>karolinaandrzejak.pl</strong> dostępna do zakupu. Idealna dla marki osobistej, portfolio i działalności profesjonalnej.</p>
+    <header class="header fade">
+      <div class="badge" aria-label="Kategoria oferty: domena premium">Domena Premium</div>
+      <h1>Domena karolinaandrzejak.pl</h1>
+      <p class="subtitle">Ekskluzywna domena dostępna do zakupu. Idealna dla <strong>marki osobistej</strong>, portfolio lub strony firmowej.
+      </p>
     </header>
 
     <div class="grid">
-      <main class="card animate-on-scroll">
-        <h2>Oferta Sprzedaży Domeny</h2>
-        <p class="text-xl mb-6 text-gray-300">Domena <strong>karolinaandrzejak.pl</strong> to unikalna okazja do stworzenia silnej marki w internecie. Krótki, łatwy do zapamiętania adres, który naturalnie pozycjonuje się na zapytania związane z frazą <strong>"Karolina Andrzejak"</strong>.</p>
+      <main id="main" class="card fade" aria-labelledby="oferta-heading">
+        <h2 id="oferta-heading">Oferta sprzedaży</h2>
+        <p class="text-gray-300 text-lg">Krótki, łatwy do zapamiętania adres, który naturalnie koresponduje z zapytaniami o frazę <em>„Karolina Andrzejak”</em>. Zbuduj przewagę w wynikach wyszukiwania i przejmij kontrolę nad wizerunkiem online.</p>
 
-        <div class="price-box">
-          <label for="price-offer" class="block text-xl mb-4 text-white font-bold">Zaproponuj Cenę</label>
+        <div class="price-box" role="group" aria-labelledby="offer-label">
+          <p id="offer-label" class="font-extrabold text-white text-xl mb-2">Zaproponuj cenę</p>
           <div class="flex justify-center items-center gap-2">
-              <input type="number" id="price-offer" name="price-offer" placeholder="Wpisz kwotę" class="bg-gray-900 bg-opacity-50 border border-gray-600 text-white text-2xl rounded-lg p-3 text-center w-48 focus:outline-none focus:ring-2 focus:ring-purple-400">
-              <span class="text-2xl font-bold text-white">PLN</span>
+            <label for="price" class="sr-only">Kwota oferty (PLN)</label>
+            <input
+              id="price"
+              name="price"
+              inputmode="numeric"
+              pattern="[0-9]*"
+              type="number"
+              min="1"
+              placeholder="Wpisz kwotę"
+              class="bg-gray-900 bg-opacity-50 border border-gray-600 text-white text-2xl rounded-lg p-3 text-center w-48 focus:outline-none focus:ring-2 focus:ring-purple-300"
+              aria-describedby="price-help"
+            >
+            <span class="text-2xl font-extrabold">PLN</span>
           </div>
+          <p id="price-help" class="mt-2 text-sm text-white/90">Kwota nie jest wiążąca — to wstępna propozycja do negocjacji.</p>
         </div>
 
-        <div class="text-center my-8">
-          <button onclick="sendOffer()" class="cta-button">
-            <span class="text-2xl">📧</span>
-            <span>Wyślij Ofertę Zakupu</span>
+        <div class="text-center my-6">
+          <button id="sendBtn" class="cta" type="button">
+            <span aria-hidden="true">📧</span>
+            <span>Wyślij ofertę zakupu</span>
           </button>
         </div>
 
-        <h3>Dlaczego Warto Zainwestować?</h3>
-        <ul class="benefits-list">
-          <li><strong>Natychmiastowa Rozpoznawalność SEO</strong> - Bezpośrednie dopasowanie do zapytań</li>
-          <li><strong>Budowa Autorytetu</strong> - Profesjonalna marka osobista w internecie</li>
-          <li><strong>Kontrola Wizerunku</strong> - Zarządzanie tym, co ludzie znajdą o Tobie w Google</li>
-          <li><strong>Łatwość Komunikacji</strong> - Prosty adres do zapamiętania i udostępniania</li>
-          <li><strong>Inwestycja w Przyszłość</strong> - Rosnąca wartość unikalnych domen osobistych</li>
+        <h3 class="mt-6">Dlaczego warto?</h3>
+        <ul class="list">
+          <li><strong>Rozpoznawalność SEO</strong> — domena zgodna z zapytaniami użytkowników.</li>
+          <li><strong>Autorytet i wiarygodność</strong> — podstawa pod markę ekspercką.</li>
+          <li><strong>Kontrola wizerunku</strong> — decyduj, co znajdą o Tobie w Google.</li>
+          <li><strong>Prosta komunikacja</strong> — łatwy do zapamiętania adres.</li>
+          <li><strong>Potencjał inwestycyjny</strong> — unikalne domeny rosną na wartości.</li>
         </ul>
       </main>
 
-      <aside>
-        <div class="card animate-on-scroll">
+      <aside class="fade" aria-label="Informacje dodatkowe">
+        <section class="card">
           <h2>FAQ</h2>
           <div class="faq-item">
-            <div class="faq-question" onclick="toggleFAQ(this)">✓ Czy domena jest dostępna natychmiast?</div>
-            <div class="faq-answer"><p>Tak! Po akceptacji oferty i podpisaniu umowy rozpoczynamy transfer zgodnie z procedurami NASK. Proces trwa zazwyczaj 5-7 dni roboczych.</p></div>
+            <button class="faq-q" type="button" aria-expanded="false">Czy domena jest dostępna od ręki?</button>
+            <div class="faq-a"><p>Tak. Po akceptacji oferty i podpisaniu umowy uruchamiamy transfer w NASK (typowo 5–7 dni roboczych).</p></div>
           </div>
           <div class="faq-item">
-            <div class="faq-question" onclick="toggleFAQ(this)">📞 Jak złożyć ofertę?</div>
-            <div class="faq-answer"><p>Wpisz swoją propozycję cenową w formularzu i kliknij 'Wyślij Ofertę Zakupu' lub skontaktuj się bezpośrednio przez email: <a href="mailto:cpa@interia.pl" class="text-blue-400">[kliknij tutaj, aby wysłać wiadomość]</a>.</p></div>
+            <button class="faq-q" type="button" aria-expanded="false">Jak złożyć ofertę?</button>
+            <div class="faq-a"><p>Wpisz kwotę powyżej i użyj przycisku <em>Wyślij ofertę zakupu</em> — otworzy się wiadomość e‑mail z gotową treścią. Możesz też napisać bezpośrednio: <a class="underline" href="mailto:cpa@interia.pl">[kliknij, aby wysłać e‑mail]</a>.</p></div>
           </div>
           <div class="faq-item">
-            <div class="faq-question" onclick="toggleFAQ(this)">🏢 Czy wystawiacie fakturę VAT?</div>
-            <div class="faq-answer"><p>Tak, możemy wystawić fakturę VAT dla transakcji B2B.</p></div>
+            <button class="faq-q" type="button" aria-expanded="false">Czy wystawiacie fakturę VAT?</button>
+            <div class="faq-a"><p>Tak, możliwa jest sprzedaż B2B z fakturą VAT.</p></div>
           </div>
-        </div>
-        <div class="card animate-on-scroll">
-          <div class="contact-info">
-            <h3 class="text-white mt-0">💌 Kontakt</h3>
-            <p class="mb-4">Masz pytania? Chcesz negocjować cenę?</p>
-            <a href="mailto:cpa@interia.pl">Napisz do nas</a>
-          </div>
-        </div>
+        </section>
+
+        <section class="card">
+          <h2>Kontakt</h2>
+          <p>Masz pytania lub chcesz negocjować cenę?</p>
+          <p class="mt-2"><a class="underline" href="mailto:cpa@interia.pl">Napisz do nas</a></p>
+        </section>
       </aside>
     </div>
 
-    <section class="card animate-on-scroll mt-10">
-      <h2>⚖️ Informacje Prawne</h2>
-      <p class="text-gray-400 text-sm">Niniejsza strona ma charakter wyłącznie komercyjny i dotyczy sprzedaży nazwy domenowej <strong>karolinaandrzejak.pl</strong>. Serwis nie jest powiązany z żadną konkretną osobą prywatną o imieniu i nazwisku Karolina Andrzejak i nie publikuje żadnych treści osobistych ani nie narusza dóbr osobistych. Oferta skierowana jest do podmiotów zainteresowanych wykorzystaniem domeny do celów komercyjnych lub budowy marki osobistej.</p>
+    <section class="card fade" aria-labelledby="legal-heading" style="margin-top:28px">
+      <h2 id="legal-heading">Informacje prawne</h2>
+      <p class="text-sm text-gray-300">Ta strona dotyczy wyłącznie komercyjnej oferty sprzedaży nazwy domenowej <strong>karolinaandrzejak.pl</strong>. Serwis nie jest powiązany z żadną konkretną osobą prywatną o imieniu i nazwisku Karolina Andrzejak i nie publikuje treści osobistych. Przekaz ma charakter informacyjny i nie narusza dóbr osobistych.</p>
     </section>
 
-    <footer class="footer">
+    <footer class="footer fade">
       <p>&copy; <span id="year"></span> Właściciel domeny karolinaandrzejak.pl</p>
+      <noscript>
+        <p>JavaScript jest wyłączony. Aby wysłać ofertę, napisz na adres: <a href="mailto:cpa@interia.pl">cpa@interia.pl</a></p>
+      </noscript>
     </footer>
   </div>
 
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
+  <script>
+    // Aktualny rok
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-function toggleFAQ(element) {
-  const answer = element.nextElementSibling;
-  answer.classList.toggle('active');
-}
+    // Animacje przy przewijaniu (IntersectionObserver)
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.fade').forEach(el=>io.observe(el));
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
+    // FAQ toggle (klawiatura + ARIA)
+    document.querySelectorAll('.faq-q').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const panel = btn.nextElementSibling;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        panel.classList.toggle('active');
+      });
+      btn.addEventListener('keyup', (e)=>{ if(e.key==='Enter' || e.key===' '){ btn.click(); }});
+    });
 
-document.querySelectorAll('.animate-on-scroll').forEach(el => {
-  observer.observe(el);
-});
+    // Wysyłka oferty (mailto)
+    const email = 'cpa@interia.pl';
+    const sendBtn = document.getElementById('sendBtn');
+    const priceInput = document.getElementById('price');
 
-function sendOffer() {
-  const priceInput = document.getElementById('price-offer');
-  const price = priceInput.value;
+    // pozwól zatwierdzić Enter
+    priceInput.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter'){ e.preventDefault(); sendBtn.click(); }
+    });
 
-  if (!price || price <= 0) {
-    alert('Proszę wpisać poprawną kwotę oferty.');
-    priceInput.focus();
-    return;
-  }
-
-  const email = 'cpa@interia.pl';
-  const subject = 'Oferta zakupu domeny karolinaandrzejak.pl';
-  const body = `Dzień dobry,\n\nSkładam ofertę zakupu domeny karolinaandrzejak.pl w kwocie: ${price} PLN.\n\nProszę o kontakt w sprawie warunków i szczegółów transakcji.\n\nPozdrawiam`;
-
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-  window.location.href = mailtoLink;
-}
-</script>
-
+    sendBtn.addEventListener('click', ()=>{
+      const val = (priceInput.value || '').trim();
+      const price = Number(val);
+      if(!val || !Number.isFinite(price) || price <= 0){
+        alert('Podaj poprawną kwotę oferty (liczba większa od zera).');
+        priceInput.focus();
+        return;
+      }
+      const fmt = new Intl.NumberFormat('pl-PL', {style:'currency', currency:'PLN', maximumFractionDigits:0}).format(price);
+      const subject = 'Oferta zakupu domeny karolinaandrzejak.pl';
+      const body = `Dzień dobry,%0D%0A%0D%0ASkładam ofertę zakupu domeny karolinaandrzejak.pl w kwocie: ${fmt}.%0D%0A%0D%0AProszę o kontakt w sprawie warunków i szczegółów transakcji.%0D%0A%0D%0APozdrawiam`;
+      const href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = href;
+    });
+  </script>
 </body>
 </html>
