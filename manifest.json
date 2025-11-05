@@ -1,0 +1,18 @@
+{
+  "name": "Karolina Andrzejak - Gabinet Prawdy",
+  "short_name": "Karolina Andrzejak",
+  "description": "Karolina Andrzejak - profesjonalna wróżka i jasnowidz. Andrzejak Karolina oferuje konsultacje tarot, astrologię i rytuały prawdy.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0a18",
+  "theme_color": "#bda068",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

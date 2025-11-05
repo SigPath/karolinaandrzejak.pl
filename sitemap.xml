@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://karolinaandrzejak.pl/</loc>
-    <lastmod>2025-09-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://karolinaandrzejak.pl/images.png</image:loc>
+      <image:title>Karolina Andrzejak - Wróżka - Gabinet Prawdy</image:title>
+      <image:caption>Karolina Andrzejak - profesjonalna wróżka i tarocistka. Andrzejak Karolina oferuje konsultacje tarot i astrologii.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://karolinaandrzejak.pl/index.html</loc>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Jeśli dodasz kolejne podstrony, dopisz tu następne <url> -->
 </urlset>
