@@ -9,4 +9,4 @@ Allow: /
 User-agent: Googlebot-Image
 Allow: /
 
-# Karolina Andrzejak - Wróżka - Gabinet Prawdy
+# Karolina Andrzejak - Domena Premium na Sprzedaż

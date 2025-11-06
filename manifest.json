@@ -1,18 +1,10 @@
 {
-  "name": "Karolina Andrzejak - Gabinet Prawdy",
+  "name": "Karolina Andrzejak - Domena Premium na Sprzedaż",
   "short_name": "Karolina Andrzejak",
-  "description": "Karolina Andrzejak - profesjonalna wróżka i jasnowidz. Andrzejak Karolina oferuje konsultacje tarot, astrologię i rytuały prawdy.",
+  "description": "Premium domena karolinaandrzejak.pl na sprzedaż. Idealna dla profesjonalisty o nazwisku Karolina Andrzejak lub Andrzejak Karolina. Strategiczne aktywo cyfrowe.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0c0a18",
-  "theme_color": "#bda068",
-  "orientation": "portrait",
-  "icons": [
-    {
-      "src": "images.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ]
+  "background_color": "#0a0e1a",
+  "theme_color": "#007bff",
+  "orientation": "portrait"
 }
