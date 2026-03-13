@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-purple-luxury: #1a0b2e;
+  --color-black-matte: #0e0e0e;
+  --color-gold: #d4af37;
+  --color-ectoplasmic: #00d4ff;
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background-color: var(--color-black-matte);
+  color: #ededed;
+  font-family: var(--font-sans);
+}
